@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: reverse.proxy
+
+proxy:
+  routes:
+    - id: "1"
+      path: "/random"
+      upstream: "http://localhost:8080/health"
+      supportMethods: ['GET','POST','PATCH','PUT','DELETE']
+
+    - id: "2"
+      path: "/random2"
+      upstream: "http://localhost:8080/health"
+      supportMethods: [ 'GET','POST','PATCH','PUT','DELETE' ]
+
+    - id: "3"
+      path: "/service"
+      upstream: "http://localhost:8080/health"
+      supportMethods: [ 'GET','POST','PATCH','PUT','DELETE' ]
+
