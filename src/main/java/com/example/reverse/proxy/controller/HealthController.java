@@ -11,5 +11,6 @@ public class HealthController {
     @GetMapping("/health")
     public ResponseEntity<byte[]> healthCheck(){
         return ResponseEntity.status(HttpStatus.FOUND).body("UP".getBytes());
+
     }
 }
